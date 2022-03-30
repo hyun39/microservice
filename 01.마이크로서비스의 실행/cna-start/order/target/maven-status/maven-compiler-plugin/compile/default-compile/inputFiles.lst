@@ -1,0 +1,8 @@
+/Users/hyunminlee/work/_edu/msa/01/cna-start/order/src/main/java/shopmall/OrderRepository.java
+/Users/hyunminlee/work/_edu/msa/01/cna-start/order/src/main/java/shopmall/OrderPlaced.java
+/Users/hyunminlee/work/_edu/msa/01/cna-start/order/src/main/java/shopmall/AbstractEvent.java
+/Users/hyunminlee/work/_edu/msa/01/cna-start/order/src/main/java/shopmall/PolicyHandler.java
+/Users/hyunminlee/work/_edu/msa/01/cna-start/order/src/main/java/shopmall/config/kafka/KafkaProcessor.java
+/Users/hyunminlee/work/_edu/msa/01/cna-start/order/src/main/java/shopmall/OrderApplication.java
+/Users/hyunminlee/work/_edu/msa/01/cna-start/order/src/main/java/shopmall/Order.java
+/Users/hyunminlee/work/_edu/msa/01/cna-start/order/src/main/java/shopmall/OrderController.java
