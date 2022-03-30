@@ -1,0 +1,9 @@
+/Users/hyunminlee/work/_edu/msa/02.게이트웨이를 사용하여 모든 API 서버들의 엔드포인트 단일화/order/src/main/java/shopmall/OrderController.java
+/Users/hyunminlee/work/_edu/msa/02.게이트웨이를 사용하여 모든 API 서버들의 엔드포인트 단일화/order/src/main/java/shopmall/OrderPlaced.java
+/Users/hyunminlee/work/_edu/msa/02.게이트웨이를 사용하여 모든 API 서버들의 엔드포인트 단일화/order/src/main/java/shopmall/Order.java
+/Users/hyunminlee/work/_edu/msa/02.게이트웨이를 사용하여 모든 API 서버들의 엔드포인트 단일화/order/src/main/java/shopmall/OrderCancelled.java
+/Users/hyunminlee/work/_edu/msa/02.게이트웨이를 사용하여 모든 API 서버들의 엔드포인트 단일화/order/src/main/java/shopmall/config/kafka/KafkaProcessor.java
+/Users/hyunminlee/work/_edu/msa/02.게이트웨이를 사용하여 모든 API 서버들의 엔드포인트 단일화/order/src/main/java/shopmall/PolicyHandler.java
+/Users/hyunminlee/work/_edu/msa/02.게이트웨이를 사용하여 모든 API 서버들의 엔드포인트 단일화/order/src/main/java/shopmall/OrderRepository.java
+/Users/hyunminlee/work/_edu/msa/02.게이트웨이를 사용하여 모든 API 서버들의 엔드포인트 단일화/order/src/main/java/shopmall/AbstractEvent.java
+/Users/hyunminlee/work/_edu/msa/02.게이트웨이를 사용하여 모든 API 서버들의 엔드포인트 단일화/order/src/main/java/shopmall/OrderApplication.java
