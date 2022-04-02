@@ -4,7 +4,7 @@
 
  Spring Security와 Spring oauth2를 사용해 Resource Owner, Client, Authorization Server, Resource Server간의 인증/인가를 실습한다.
  여기서 Resouce란 Gateway를 경유하는 Rest APIs 들이며, Gateway가 Client 이자 Resource Server 역할을 한다.
- JWT기반 Access_Token을 활용한다.
+ JWT (Json Web Token) 기반 Access_Token을 활용한다.
  
 
 # gateway 서비스에서 리소스서버 설정 
