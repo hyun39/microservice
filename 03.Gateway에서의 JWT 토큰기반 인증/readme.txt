@@ -61,6 +61,8 @@ spring:
  이때 Basic 뒤의 base64 값은 인증서버에 등록된 Gateway의 인코딩된 CLIENT_ID:CLIENT_SECRET 정보이다.
 
  http --form POST localhost:8088/oauth/token "Authorization: Basic dWVuZ2luZS1jbGllbnQ6dWVuZ2luZS1zZWNyZXQ=" grant_type=password username=1@uengine.org password=1
+ 
+( 위에서 BASIC 값은 어디 정의 되어 있는 것이지? )
 
  출력된 access_token을 복사하여 https://jwt.io/ 페이지에 접속 후 decode해 본다.
  Header, Payload, Signature로 파싱된다.
