@@ -10,20 +10,14 @@ import java.util.List;
 public class OrderDetail  {
 
     
-    private Integer price;
-    
     private Long productid;
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    
+    private Long id;
     
     private Integer qty;
 
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
 
     public Long getProductid() {
         return productid;
@@ -33,6 +27,14 @@ public class OrderDetail  {
         this.productid = productid;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public Integer getQty() {
         return qty;
     }
@@ -40,8 +42,4 @@ public class OrderDetail  {
     public void setQty(Integer qty) {
         this.qty = qty;
     }
-
-
-
-
 }

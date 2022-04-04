@@ -25,11 +25,17 @@ public class Order  {
     @PostPersist
     public void onPostPersist(){
         OrderPlaced orderPlaced = new OrderPlaced();
-        BeanUtils.copyProperties(this, orderPlaced);
+
+        orderPlaced.setId(this.getId());
+
+        //BeanUtils.copyProperties(this, orderPlaced);
+
         orderPlaced.publishAfterCommit();
 
         OrderCancelled orderCancelled = new OrderCancelled();
-        BeanUtils.copyProperties(this, orderCancelled);
+        //BeanUtils.copyProperties(this, orderCancelled);
+        orderCancelled.setId(this.getId());
+        
         orderCancelled.publishAfterCommit();
 
     }
