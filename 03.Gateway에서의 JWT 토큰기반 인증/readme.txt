@@ -4,7 +4,7 @@
 
  Spring Security와 Spring oauth2를 사용해 Resource Owner, Client, Authorization Server, Resource Server간의 인증/인가를 실습한다.
  여기서 Resouce란 Gateway를 경유하는 Rest APIs 들이며, Gateway가 Client 이자 Resource Server 역할을 한다.
- JWT기반 Access_Token을 활용한다.
+ JWT (Json Web Token) 기반 Access_Token을 활용한다.
  
 
 # gateway 서비스에서 리소스서버 설정 
@@ -61,6 +61,8 @@ spring:
  이때 Basic 뒤의 base64 값은 인증서버에 등록된 Gateway의 인코딩된 CLIENT_ID:CLIENT_SECRET 정보이다.
 
  http --form POST localhost:8088/oauth/token "Authorization: Basic dWVuZ2luZS1jbGllbnQ6dWVuZ2luZS1zZWNyZXQ=" grant_type=password username=1@uengine.org password=1
+ 
+( 위에서 BASIC 값은 어디 정의 되어 있는 것이지? )
 
  출력된 access_token을 복사하여 https://jwt.io/ 페이지에 접속 후 decode해 본다.
  Header, Payload, Signature로 파싱된다.
@@ -88,3 +90,7 @@ Service Clear
  fuser -k 8081/tcp
  fuser -k 8088/tcp
  fuser -k 8090/tcp
+ 
+ 
+ 
+ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoi7ISc7Jq47IucIiwidXNlcl9uYW1lIjoiMUB1ZW5naW5lLm9yZyIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSIsInRydXN0Il0sIm5pY2tuYW1lIjoi7Jyg7JeU7KeEIiwiY29tcGFueSI6IlVlbmdpbmUiLCJleHAiOjE2NDg5NTIzMDUsImF1dGhvcml0aWVzIjpbIlVTRVJfQURNSU4iXSwianRpIjoiSU5wZ3c1MDMxNGJJMSswNXR6QzEzazNBQ25VPSIsImNsaWVudF9pZCI6InVlbmdpbmUtY2xpZW50In0.IXCjAedfLZhgtjYfBxHJ71aqitx-kayCYUuhuCTm9K9GmbHsmXbhlCmActFYspEH7qzdIiEae32GBx8OhdHU00R6LsE7Dcb7_XcB2tAnKsBsowf3Y7SJNDOSwE36nrEmP4yPS0YwyQM8DkpWCipJOR1ppWfq3EXZ9xwlrxMjimcK3Q--ma-SWUwaTLN-zMYwQ21xQq8ELSXS4em7tGEHptZAUrjFSpsUB8BOA9sICBdXeFOVxc0_F4PidX25sY-n0Y8gyIzsRDHEyTFYUi69ew_ij1-91gUOMZDATQ4g-sxy9UzufHAKzL2nwK7WNV4PbadPOk2tIiimNTPw5PbVjQ
