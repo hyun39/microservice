@@ -1,0 +1,10 @@
+/Users/hyunminlee/work/_edu/msa/00.from_msaez /Order/src/main/java/smallshop/OrderPlaced.java
+/Users/hyunminlee/work/_edu/msa/00.from_msaez /Order/src/main/java/smallshop/Order.java
+/Users/hyunminlee/work/_edu/msa/00.from_msaez /Order/src/main/java/smallshop/config/kafka/KafkaProcessor.java
+/Users/hyunminlee/work/_edu/msa/00.from_msaez /Order/src/main/java/smallshop/AbstractEvent.java
+/Users/hyunminlee/work/_edu/msa/00.from_msaez /Order/src/main/java/smallshop/PolicyHandler.java
+/Users/hyunminlee/work/_edu/msa/00.from_msaez /Order/src/main/java/smallshop/OrderController.java
+/Users/hyunminlee/work/_edu/msa/00.from_msaez /Order/src/main/java/smallshop/OrderApplication.java
+/Users/hyunminlee/work/_edu/msa/00.from_msaez /Order/src/main/java/smallshop/OrderCancelled.java
+/Users/hyunminlee/work/_edu/msa/00.from_msaez /Order/src/main/java/smallshop/OrderRepository.java
+/Users/hyunminlee/work/_edu/msa/00.from_msaez /Order/src/main/java/smallshop/OrderDetail.java
