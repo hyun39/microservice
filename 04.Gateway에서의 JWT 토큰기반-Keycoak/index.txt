@@ -1,0 +1,56 @@
+
+
+
+#OAuth2 Stackholders
+
+ Spring Security와 Spring oauth2를 사용하고, Resource Owner, Client, Authorization Server, Resource Server간의 인증/인가를 실습한다. 
+ 여기서 Resouce란 Gateway를 경유하는 Rest APIs를 말한다.
+ JWT기반 Access_Token을 활용한다. 
+ 이번 랩에서는 Gateway를 Client와 Resource Server 역할로 설정한다. 
+ 인증/인가 서버로는 Keycloak(https://www.keycloak.org/) 서버를 활용한다.
+
+# OAuth2 인증/인가(Keycloak) Endpoint 설정
+
+ Gateway 서비스의 application.yml 파일을 열어본다. 
+ 인증/인가를 위한 Authorization Sever의 Endpoint가 등록된다.
+  security:
+    oauth2:
+      client:
+        provider:
+          my-keycloak-provider:
+            issuer-uri: http://localhost:8080/realms/my_realm
+
+ KeyCloak에 등록된 Client(Gateway)의 Credential정보가 설정된다.
+ OAuth2의 Grant Type을 password 방식으로 설정한다.
+          keycloak-spring-gateway-client:
+            provider: my-keycloak-provider
+            client-id: my_client
+            client-secret: HKFKYP7kb8OMldAgfvnk27FhRPOv8Y7H
+            authorization-grant-type: password
+
+
+# OAuth2 Security 상세설정
+
+ Gateway 서비스의 SecurityConfig.java 파일을 열어본다.
+ spring-cloud-gateway 는 webflux로 기동되기 때문에 @EnableWebFluxSecurity를 적용한다.
+ ServerHttpSecurity 생성시, 접근제어목록(ACL)을 적용한다.
+ .oauth2Login() OAuth2의 디폴트 로그인 설정이 적용된다.
+ .oauth2ResourceServer() 리소스서버 역할을 부여하고 jwt 형식의 Authorization을 지정한다.           
+
+
+
+# 서비스 구동
+ 먼저 Keycloak 서버를 구동한다.
+ cd keycloak/bin
+ ./kc.sh start-dev
+ keycloak 서버의 default 포트인 8080으로 실행된다.
+
+ 포트 확인 (Labs > 포트확인)
+
+ Gateway, Order 서비스를 구동한다.
+
+ cd gateway
+ mvn spring-boot:run
+ cd order
+ mvn spring-boot:run 
+ 각각 8088, 8081 포트로 기동된다

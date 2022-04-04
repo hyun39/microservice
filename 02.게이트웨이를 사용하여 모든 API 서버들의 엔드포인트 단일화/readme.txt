@@ -38,3 +38,7 @@ delivery 마이크로 서비스를 8082 포트로 실행한다.
 8082 포트로 delivery 서비스를 호출하여 보고, 8080포트로 게이트웨이를 통하여 delivery 서비스를 호출한다.
  http localhost:8082/deliveries
  http localhost:8080/deliveries
+
+
+ # 설정관련
+ 
