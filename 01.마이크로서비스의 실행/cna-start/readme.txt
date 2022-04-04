@@ -1,3 +1,13 @@
+
+# https://labs.msaez.io/
+- shop.json 
+
+
+
+# 여기서는 Spring Applicatin으로 Rest 서비스로 뛰워보는 것이다.
+
+
+
 cd order
 mvn spring-boot:run
 
@@ -16,6 +26,34 @@ http localhost:8081/orders
 실행중 프로세스 확인 및 삭제
 netstat -lntp | grep :808 
 kill -9 <process id>
+
+
+
+# 설정관련
+- 개별서비스
+
+
+
+Order
+    Spring
+        JPA
+        cloud   
+            Stream
+                Kafka
+                Bindings
+    Logging
+
+Delivery
+    상동
+
+Gateway 
+    Spring
+        cloud   
+            routes
+            globalcors
+
+
+
 
 
 
