@@ -1,4 +1,10 @@
 
+apt-get update
+apt-get install net-tools
+apt-get install zip
+
+
+
 # https://labs.msaez.io/
 - shop.json 
 

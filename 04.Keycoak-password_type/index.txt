@@ -1,6 +1,7 @@
 
 
 
+
 #OAuth2 Stackholders
 
  Spring Security와 Spring oauth2를 사용하고, Resource Owner, Client, Authorization Server, Resource Server간의 인증/인가를 실습한다. 

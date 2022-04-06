@@ -1,1 +1,10 @@
-/.metadata/
+**/kafka_2.12-3.1.0/**
+**/keycloak-17.0.1/**
+.project
+**/target/**
+**/.mvn/**
+**/target/**
+mvnw
+mvnw.cmd
+*.class
+**/.metadata/**

@@ -1,0 +1,80 @@
+server:
+  port: 8088
+---
+spring:
+  config:
+    activate:
+      on-profile: default
+  security:
+    oauth2:
+      client:
+        provider:
+          my-keycloak-provider:
+            issuer-uri: http://localhost:8080/realms/my_realm
+        registration:
+          keycloak-test-client:
+            provider: my-keycloak-provider
+            client-id: test-client
+            client-secret: Bx4d17lX6kwCDhJhFH1GmtzWBDOOF8JN
+            authorization-grant-type: authorization_code
+            redirect-uri: '{baseUrl}/login/oauth2/code/keycloak'
+            scope: openid
+  cloud:
+    gateway:
+      default-filters:
+       - TokenRelay
+      routes:
+       - id: order
+         uri: http://localhost:8081
+         predicates:
+           - Path=/orders/**, /order/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOriginPatterns:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+  security:
+    oauth2:
+      client:
+        provider:
+          my-keycloak-provider:
+            issuer-uri: http://keycloak:8080/realms/my_realm
+        registration:
+          keycloak-spring-gateway-client:
+            provider: my-keycloak-provider
+            client-id: spring-gateway-client
+            client-secret: HKFKYP7kb8OMldAgfvnk27FhRPOv8Y7H
+            authorization-grant-type: authorization_code
+            redirect-uri: '{baseUrl}/login/oauth2/code/keycloak'
+
+  cloud:
+    gateway:
+      default-filters:
+        - TokenRelay
+      routes:
+        - id: order
+          uri: http://order:8081
+          predicates:
+            - Path=/orders/**, /order/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOriginPatterns:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+server:
+  port: 8080

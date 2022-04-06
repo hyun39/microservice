@@ -90,7 +90,55 @@ Service Clear
  fuser -k 8081/tcp
  fuser -k 8088/tcp
  fuser -k 8090/tcp
+
+
  
- 
- 
- eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjoi7ISc7Jq47IucIiwidXNlcl9uYW1lIjoiMUB1ZW5naW5lLm9yZyIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSIsInRydXN0Il0sIm5pY2tuYW1lIjoi7Jyg7JeU7KeEIiwiY29tcGFueSI6IlVlbmdpbmUiLCJleHAiOjE2NDg5NTIzMDUsImF1dGhvcml0aWVzIjpbIlVTRVJfQURNSU4iXSwianRpIjoiSU5wZ3c1MDMxNGJJMSswNXR6QzEzazNBQ25VPSIsImNsaWVudF9pZCI6InVlbmdpbmUtY2xpZW50In0.IXCjAedfLZhgtjYfBxHJ71aqitx-kayCYUuhuCTm9K9GmbHsmXbhlCmActFYspEH7qzdIiEae32GBx8OhdHU00R6LsE7Dcb7_XcB2tAnKsBsowf3Y7SJNDOSwE36nrEmP4yPS0YwyQM8DkpWCipJOR1ppWfq3EXZ9xwlrxMjimcK3Q--ma-SWUwaTLN-zMYwQ21xQq8ELSXS4em7tGEHptZAUrjFSpsUB8BOA9sICBdXeFOVxc0_F4PidX25sY-n0Y8gyIzsRDHEyTFYUi69ew_ij1-91gUOMZDATQ4g-sxy9UzufHAKzL2nwK7WNV4PbadPOk2tIiimNTPw5PbVjQ
+-----------------------------------------------------------------------
+
+Spring Security는 더이상 auth server의 역활을 제공하지 않고 Deprecated 되었다.
+
+-----------------------------------------------------------------------
+
+
+
+https://spring.io/projects/spring-security-oauth
+
+
+Gateway
+
+	@SpringBootApplication
+	Application
+	
+	@Configuration
+	@EnableWebFluxSecurity
+	ResourceServerConfiguration
+	
+    # filter와 같은 역활을 한다.
+    @Bean
+      SecurityWebFilterChain 
+
+
+Auth
+	@SpringBootApplication
+	AuthorizationServerApplication
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	
+	
+
+
+
+
+
+
