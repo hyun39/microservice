@@ -1,0 +1,46 @@
+server:
+  port: 8080
+
+---
+
+spring:
+  profiles: default
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+logging:
+  level:
+    org.hibernate.type: trace
+    org.springframework.cloud: debug
+server:
+  port: 8088
+
+api:
+  url:
+    delivery: http://localhost:8082
+    product: http://localhost:8085
+    order: http://localhost:8081
+---
+spring:
+  profiles: docker
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+api:
+  url:
+    delivery: http://delivery:8080
+    product: http://products:8080
+    order: http://orders:8080
