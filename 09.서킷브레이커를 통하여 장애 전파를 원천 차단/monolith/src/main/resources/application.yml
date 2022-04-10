@@ -1,0 +1,41 @@
+server:
+  port: 8088
+
+spring:
+  profiles: default
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+
+logging:
+  level:
+    org.hibernate.type: trace
+    org.springframework.cloud: debug
+
+
+api:
+  url:
+    delivery: http://localhost:8082
+
+#feign:
+#  hystrix:
+#    enabled: true
+#
+#hystrix:
+#  command:
+#    # 전역설정
+#    default:
+#      execution.isolation.thread.timeoutInMilliseconds: 610
+
+
+
+# 교육용 코드
+superuser:
+  userId: ${_SUPER_UID:admin123}
