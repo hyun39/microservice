@@ -8,3 +8,4 @@ mvnw.cmd
 *.class
 .metadata/
 node_modules/
+*~*
