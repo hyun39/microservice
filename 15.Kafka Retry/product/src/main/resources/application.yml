@@ -1,0 +1,77 @@
+server:
+  port: 8080
+
+---
+
+spring:
+  profiles: default
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+  cloud:
+    stream:
+      kafka:
+#        bindings:
+#          event-in:
+#            consumer:
+#              enableDlq: true
+#              dlqName: dlq-kafkatest
+#              dlqPartitions: 1
+        binder:
+          brokers: localhost:9092
+        streams:
+          binder:
+            configuration:
+              default:
+                key:
+                  serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+                value:
+                  serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+      bindings:
+        event-in:
+          group: product
+          destination: kafkatest
+          contentType: application/json
+#          consumer:
+#            max-attempts: 3 
+#            back-off-initial-interval: 1000
+#            back-off-max-interval: 1000
+#            back-off-multiplier: 1.0
+#            defaultRetryable: false
+        event-out:
+          destination: kafkatest
+          contentType: application/json
+
+logging:
+  level:
+    org.hibernate.type: trace
+    org.springframework.cloud: debug
+server:
+  port: 8082
+---
+
+spring:
+  profiles: docker
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: my-kafka:9092
+        streams:
+          binder:
+            configuration:
+              default:
+                key:
+                  serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+                value:
+                  serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+      bindings:
+        event-in:
+          group: product
+          destination: kafkatest
+          contentType: application/json
+        event-out:
+          destination: kafkatest
+          contentType: application/json
